@@ -37,6 +37,7 @@ cc_library_headers {
     host_supported: true,
     vendor_available: true,
     ramdisk_available: true,
+    vendor_ramdisk_available: true,
     recovery_available: true,
     apex_available: [
         "//apex_available:platform",
@@ -67,8 +68,10 @@ cc_library {
     name: "liblog",
     host_supported: true,
     ramdisk_available: true,
+    vendor_ramdisk_available: true,
     recovery_available: true,
     native_bridge_supported: true,
+    llndk_stubs: "liblog.llndk",
     srcs: liblog_sources,
 
     target: {
@@ -149,7 +152,7 @@ ndk_library {
 }
 
 llndk_library {
-    name: "liblog",
+    name: "liblog.llndk",
     native_bridge_supported: true,
     symbol_file: "liblog.map.txt",
     export_include_dirs: ["include_vndk"],
