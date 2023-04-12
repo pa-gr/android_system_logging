@@ -12,6 +12,7 @@ rust_library {
         "liblog_rust",
     ],
     vendor_available: true,
+    product_available: true,
     target: {
         android: {
             rustlibs: [
